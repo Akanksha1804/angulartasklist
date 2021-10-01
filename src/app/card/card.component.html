@@ -1,0 +1,33 @@
+
+    <div class="card mb-5 mb-lg-0">
+      <div class="card-body">
+        <h5 class="card-title text-muted text-uppercase text-center">{{title}}</h5>
+        <h1 class="card-price text-center">${{price}}<span class="period"><sub>/month</sub></span></h1>
+        <hr>
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fas fa-check"></i></span>{{typeofuser}}</li>
+          <li><span class="fa-li"><i class="fas fa-check"></i></span>{{storage}}</li>
+          <li><span class="fa-li"><i class="fas fa-check"></i></span>{{project}}</li>
+          <li><span class="fa-li"><i class="fas fa-check"></i></span>{{community}}</li>
+          <li><span class="fa-li"><i class="fas fa-times"></i></span>
+            <span *ngIf="priproject">Unlimited Private Projects</span>
+            <span *ngIf="!priproject" class="text-muted">Unlimited Private Projects</span>
+          </li>
+          <li><span class="fa-li"><i class="fas fa-times"></i></span>
+            <span *ngIf="phonesupport">Dedicated Phone Support</span>
+            <span *ngIf="!phonesupport" class="text-muted">Dedicated Phone Support</span>
+          </li>
+          <li><span class="fa-li"><i class="fas fa-times"></i></span>
+            <span *ngIf="subdomain">Free Subdomain</span>
+            <span *ngIf="!subdomain" class="text-muted">Free Subdomain</span>
+          </li>
+          <li><span class="fa-li"><i class="fas fa-times"></i></span>
+            <span *ngIf="monstatrep">Monthly Status Reports</span>
+            <span *ngIf="!monstatrep" class="text-muted">Monthly Status Reports</span>
+          </li>
+        </ul>
+        <div class="d-grid">
+          <a href="#" class="btn btn-primary text-uppercase">Button</a>
+        </div>
+      </div>
+    </div>

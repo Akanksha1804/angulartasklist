@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+
+
+
 
 @Component({
   selector: 'app-list',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+  @Input() task:string = "" ;
+  @Input() complete:boolean = true ;
+  @Output() op : EventEmitter<string> = new EventEmitter<string>();
+
+  completeTask($event:any){
+    this.op.emit(this.task);
+    console.log(this.task);
+  }
 
   constructor() { }
-
   ngOnInit(): void {
   }
+
 
 }

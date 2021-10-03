@@ -1,7 +1,21 @@
-section.pricing {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
-  }
+body{
+  background-color: lightgreen; 
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.container{
+  width:600px;
+  margin: auto; 
+  padding:20px;
+  background-color: white;
+  border-radius: 5px;
+}
+#add{
+  background-color: lightgreen;
+}
+#clear{
+  background-color: lightgreen;
+}
   
   
   

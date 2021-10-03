@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './model';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,40 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularDemo';
   counter = 0;
-  
+  tasks : Array<Task> = [
+    {
+      complete : true,
+      task : "default task"
+    }
+  ];
 
-  cards=[
+  addTodo(t:string){
+    let obj ={} as Task;
+    obj.complete=true;
+    obj.task = t;
+    this.tasks.push(obj);
+  }
+
+  completeTask(op:any){
+    for(let i=0;i<this.tasks.length;i++){
+      if(this.tasks[i].task==op){
+        this.tasks[i].complete=false;
+      }
+    }
+  }
+
+  clearTasks(){
+    for(let i=0;i<this.tasks.length;i++){
+      if(this.tasks[i].complete==false){
+        this.tasks.splice(i,1);
+        console.log(this.tasks);
+      }
+    }
+  }
+
+ 
+
+  /*cards=[
     {
       title : "Free",
       price : 0,
@@ -47,7 +79,7 @@ export class AppComponent {
       subdomain : true,
       monstatrep : true
     }
-  ]
+  ]*/
 
   
 }

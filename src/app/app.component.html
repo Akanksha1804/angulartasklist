@@ -1,5 +1,5 @@
 
-<section class="pricing py-5">
+<!--<section class="pricing py-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-4" *ngFor="let card of cards">
@@ -18,4 +18,28 @@
         </div>
       </div>
     </div>
-</section>
+</section>-->
+<html>
+<body>
+<div class="container">
+  <div class="row m-3">
+    <input #todo type= "text" name = "todo"  class="col-lg-8 "  required/>
+    <button class="col-lg-4" (click)="addTodo(todo.value)" id="add" >
+      Add task
+    </button>
+    
+  </div>
+  <div class="row m-3">
+    <ul class="list-group" *ngFor="let Task of tasks">
+      <app-list [task]="Task.task" [complete]="Task.complete" (op)="completeTask($event)">
+
+      </app-list>
+    </ul>
+  </div>
+  <div class="row m-3">
+    <button class="col-lg-5" id="clear" (click)="clearTasks()">CLEAR COMPLETED TASKS</button>
+  </div>
+  
+</div>
+</body>
+</html>
